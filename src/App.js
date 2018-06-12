@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Navbar from "./components/Navbar";
 import cards from "./cards.json";
 import "./App.css";
+
 
 class App extends Component {
   // Setting this.state.cards to the cards json array
@@ -48,8 +50,8 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-      <Title score={this.state.score} highscore={this.state.highscore}>Clicky Game</Title>
-      <div></div>
+      <Navbar score={this.state.score} highscore={this.state.highscore}>Clicky Game</Navbar>
+      <Title></Title>
         {this.state.cards.map(card => (
           <FriendCard
             id={card.id}
@@ -57,6 +59,7 @@ class App extends Component {
             image={card.image}
             clickCount={this.clickCount}
           />
+          
         ))}
       </Wrapper>
     );
